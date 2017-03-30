@@ -26,14 +26,18 @@ end
 
   def update
     @artist = Artist.find(params[:id])
-    @artist.update(artist_params)
-    redirect_to @artist
+
+    if @artist.update(artist_params)
+      redirect_to @artist
+    else
+      render :edit
+    end
   end
 
   def destroy
     @artist = Artist.find(params[:id])
     @artist.destroy
-    redirect_to artist_path
+    redirect_to artists_path
   end
   private
 
@@ -42,3 +46,5 @@ end
   end
   
 end
+
+
