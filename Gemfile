@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'unicorn'
+gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use postgresql as the database for Active Record
@@ -37,12 +38,17 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'pry'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
+  gem 'capybara'
+  gem 'launchy'
+  
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
