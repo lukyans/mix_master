@@ -9,6 +9,5 @@ RSpec.feature "User can delete artist" do
     
       click_on "Delete"
       current_path.should == artist_path
-  
   end
 end
